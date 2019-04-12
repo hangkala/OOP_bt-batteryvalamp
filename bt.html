@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Lamp = function () {
+        this.status = function () {
+            return this.status;
+        };
+        this.turnOn = function () {
+            alert('on');
+            this.status = true;
+        };
+        this.turnOff = function () {
+            this.status = false;
+        };
+    };
+
+    let Button = function () {
+        this.setUpLamp = function (lapm) {
+            this.lamp = lapm;
+        };
+        this.connectLamp = function () {
+            return this.lamp.status;
+        };
+        this.switchOff = function () {
+            if (this.lamp.status){
+                alert('Da tat');
+            }
+        };
+        this.switchOn = function () {
+            if (!this.lamp.status){
+                alert('Da bat');
+            }
+        }
+    };
+
+    let den = new Lamp();
+    den.turnOff();
+    //console.log(den.status);
+    let btn = new Button();
+    btn.setUpLamp(den);
+    btn.connectLamp();
+    btn.switchOn();
+</script>
+</body>
+</html>
